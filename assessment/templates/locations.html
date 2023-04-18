@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<table>
+    <caption>{{ caption }}</caption>
+    <tr>
+        <th>location_id</th>
+        <th>location_name</th>
+    </tr>
+    {% for loc in locations %}
+        <tr>
+            {% for colNum in range(loc|length) %}
+                <td>{{ loc[colNum] }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

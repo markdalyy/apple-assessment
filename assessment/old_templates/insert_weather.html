@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        {% for field in form %}
+            {% if field.label.text != "CSRF Token" and field.label.text != "Submit" %}
+                {{ field.label }}
+                    {{ field() }}
+                    {% for error in field.errors %}
+                        {{ error }}
+                    {% endfor %}
+                <br />
+            {% endif %}
+        {% endfor %}
+        {{ form.submit() }}
+
+
+<!--        {{ form.location.label }}-->
+<!--        {{ form.location() }}-->
+<!--        {% for error in form.location.errors %}-->
+<!--            {{ error }}-->
+<!--        {% endfor %}-->
+<!--        <br />-->
+<!--        {{ form.time.label }}-->
+<!--        {{ form.time() }}-->
+<!--        {% for error in form.time.errors %}-->
+<!--            {{ error }}-->
+<!--        {% endfor %}-->
+<!--        <br />-->
+<!--      {{ form.pressure.label }}-->
+<!--        {{ form.pressure() }}-->
+<!--        {% for error in form.pressure.errors %}-->
+<!--            {{ error }}-->
+<!--        {% endfor %}-->
+<!--        <br />-->
+<!--        {{ form.wind_direction.label }}-->
+<!--        {{ form.wind_direction() }}-->
+<!--        {% for error in form.wind_direction.errors %}-->
+<!--            {{ error }}-->
+<!--        {% endfor %}-->
+<!--        <br />-->
+<!--        {{ form.wind_speed.label }}-->
+<!--        {{ form.wind_speed() }}-->
+<!--        {% for error in form.wind_speed.errors %}-->
+<!--            {{ error }}-->
+<!--        {% endfor %}-->
+<!--        <br />-->
+<!--        {{ form.gust.label }}-->
+<!--        {{ form.gust() }}-->
+<!--        {% for error in form.gust.errors %}-->
+<!--            {{ error }}-->
+<!--        {% endfor %}-->
+<!--        <br />-->
+<!--        {{ form.submit() }}-->
+    </form>
+
+    <p>
+        {{ message }}
+    </p>
+
+
+{% endblock content %}

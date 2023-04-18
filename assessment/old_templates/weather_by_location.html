@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        {{ form.location.label }}
+        {{ form.location() }}
+        {% for error in form.location.errors %}
+            {{ error }}
+        {% endfor %}
+        <br />
+        {{ form.submit() }}
+    </form>
+
+    {% if weather %}
+        <table>
+            <caption>{{ caption }}</caption>
+            <tr>
+                <th>location_id</th>
+                <th>time_utc</th>
+                <th>atmospheric_pressure_mb</th>
+                <th>wind_direction_degree</th>
+                <th>wind_speed_kn</th>
+                <th>gust_kn</th>
+            </tr>
+        {% for record in weather %}
+            <tr>
+                <td>{{ record["location_id"] }}</td>
+                <td>{{ record["time_utc"] }}</td>
+                <td>{{ record["atmospheric_pressure_mb"] }}</td>
+                <td>{{ record["wind_direction_degree"] }}</td>
+                <td>{{ record["wind_speed_kn"] }}</td>
+                <td>{{ record["gust_kn"] }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% endif %}
+
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<table>
+    <caption>{{ caption }}</caption>
+    <tr>
+        <th>location_id</th>
+        <th>time_utc</th>
+        <th>atmospheric_pressure_mb</th>
+        <th>wind_direction_degree</th>
+        <th>wind_speed_kn</th>
+        <th>gust_kn</th>
+    </tr>
+    {% for record in weather %}
+        <tr>
+            {% for colNum in range(record|length) %}
+                <td>{{ record[colNum] }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>Apple Assessment</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+      <link rel="icon" href="{{ url_for('static', filename='favicon/apple-logo-16x16.ico') }}">
+      {% block head %}{% endblock %}
+  </head>
+  <body>
+
+      <header>
+          <img src="{{ url_for('static', filename='images/apple-logo.png') }}" alt="Apple Logo" />
+          <h1>Apple Assessment</h1>
+      </header>
+
+      <nav>
+        <ul>
+          <li><a class="nav-link" href="{{ url_for('all_locations') }}">All Locations</a></li>
+          <li><a class="nav-link" href="{{ url_for('all_weather') }}">All Weather</a></li>
+          <li><a class="nav-link" href="{{ url_for('weather_by_location') }}">Weather by Location</a></li>
+          <li><a class="nav-link" href="{{ url_for('insert_weather') }}">Add Record</a></li>
+          <li><a class="nav-link" href="{{ url_for('bar_chart') }}">Bar Chart</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        {% block content %}{% endblock %}
+      </main>
+
+  </body>
+    <script type="text/javascript">
+        // get all anchor tags in nav bar
+        anchors = document.getElementsByClassName("nav-link");
+        // if anchor links to current page change its color to blue
+
+        if (window.location.pathname == '/') {
+            anchors[0].style.backgroundColor = '#9894a6';
+        } else {
+            for (i = 0; i < anchors.length; i++) {
+                if (anchors[i] == window.location.href) {
+                    anchors[i].style.backgroundColor = 'green';
+                    break;
+                }
+            }
+        }
+    </script>
+  {% block script %}{% endblock %}
+</html>

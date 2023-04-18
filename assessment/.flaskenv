@@ -1,0 +1,2 @@
+FLASK_APP=mySQLapp.py
+FLASK_DEBUG=1

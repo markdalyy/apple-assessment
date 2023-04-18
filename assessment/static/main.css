@@ -1,0 +1,58 @@
+header {
+    color: #9f9e9e;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3em;
+}
+
+main {
+    padding: 1.5em;
+}
+
+table caption {
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 0 2.5em 1.5em 0;
+}
+
+table {
+    text-align: center;
+}
+
+tr:nth-child(odd) {
+    background-color: #9f9e9e;
+}
+
+th, td {
+    border: solid 1px #9f9e9e;
+}
+
+nav ul {
+    display: block;
+    margin: 1em;
+    list-style: none;
+    padding: 0.88em 0 0.8em 0;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
+    background-color: #9f9e9e;
+    padding: .885em .88em;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    background-color: green;
+}
+
+nav a[href=""] {
+    background-color: green;
+}
+
+form input {
+    margin-bottom: 1em;
+}

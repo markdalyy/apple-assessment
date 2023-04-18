@@ -1,0 +1,5 @@
+1. Inspect csv files
+2. Create tables
+3. Pre process data
+4. Populate tables
+5. Return queries in application
